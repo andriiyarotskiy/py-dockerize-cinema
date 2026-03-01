@@ -5,6 +5,9 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 COPY requirements.txt requirements.txt
+
+
+RUN apk add --no-cache build-base postgresql-dev
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
